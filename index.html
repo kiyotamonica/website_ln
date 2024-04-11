@@ -4,7 +4,18 @@
         <meta charset="UTF-8"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <!-- Fonte Navbar -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;500;600&family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <!-- Fonte Body -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;500;600&family=Handlee&family=Jost:ital,wght@0,100..900;1,100..900&family=Spinnaker&display=swap" rel="stylesheet">
+        <!-- CSS -->
         <link rel="stylesheet" href="style.css"/>
+        <!-- Biblioteca FontAwesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <title>LN Consultoria Contábil</title>
     </head>
     <body>
@@ -12,15 +23,48 @@
             <div class="navbar">
                 <div class="logo">
                     <a href="#">
+                        <img src="/assets/ln_logo_header_semfundo.png">
                         LN Consultoria Contábil
                     </a>
                 </div>
                 <ul class="links">
-                    <li><a href="home">Home</a></li>
+                    <li><a href="#">Home</a></li>
                     <li><a href="sobre">Sobre</a></li>
                     <li><a href="contatos">Contatos</a></li>
                 </ul>
+                <div class="toggle_btn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+
+            <div class="dropdown_menu">
+                <li><a href="home">Home</a></li>
+                <li><a href="sobre">Sobre</a></li>
+                <li><a href="contatos">Contatos</a></li>
             </div>
         </header>
+
+        <script>
+            const toggleBtn = document.querySelector('.toggle_btn')
+            const toggleBtnIcon = document.querySelector('.toggle_btn i')
+            const dropDownMenu = document.querySelector('.dropdown_menu')
+
+            toggleBtn.onclick = function () {
+                dropDownMenu.classList.toggle('open')
+                const isOpen = dropDownMenu.classList.contains('open')
+
+                if (isOpen) {
+                    dropDownMenu.style.display = 'block';
+                    toggleBtnIcon.classList = 'fa-solid fa-xmark';
+                } else {
+                    dropDownMenu.style.display = 'none';
+                    toggleBtnIcon.classList = 'fa-solid fa-bars';
+                }
+            }
+        </script>
+
+        <main>
+
+        </main>
     </body>
 </html>
